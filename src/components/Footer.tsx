@@ -42,15 +42,13 @@ export const Footer = () => {
         >
           <h3 className="font-bold text-lg">Présence</h3>
 
-          <a className="opacity-60 hover:opacity-100" href="#">
+          <a className="opacity-60 hover:opacity-100" href="https://github.com/juniorkema364">
             GitHub
           </a>
-          <a className="opacity-60 hover:opacity-100" href="#">
+          <a className="opacity-60 hover:opacity-100" href="https://www.linkedin.com/in/didier-placide-kema-3426b5343/">
             LinkedIn
           </a>
-          <a className="opacity-60 hover:opacity-100" href="#">
-            Twitter
-          </a>
+        
         </motion.div>
 
         {/* SERVICES */}
@@ -122,7 +120,7 @@ export const Footer = () => {
         <h3 className="text-muted-foreground">
           © {new Date().getFullYear()} Portfolio développé par{" "}
           <span className="text-primary font-medium">
-            Développeur Full Stack
+            KEMA Didier Placide
           </span>
         </h3>
       </motion.section>

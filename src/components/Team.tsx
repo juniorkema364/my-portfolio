@@ -34,7 +34,7 @@ const teamList: TeamProps[] = [
       },
       {
         name: "Instagram",
-        url: "https://www.instagram.com/",
+        url: "https://www.instagram.com/juniorkema364",
       },
     ],
   },

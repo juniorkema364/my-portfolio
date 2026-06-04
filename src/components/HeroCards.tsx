@@ -98,7 +98,7 @@ export const HeroCards = () => {
               </a>
 
               <a
-                href="#"
+                href="https://www.linkedin.com/in/didier-placide-kema-3426b5343/"
                 className={buttonVariants({ variant: "ghost", size: "sm" })}
               >
                 <Linkedin size="20" />
