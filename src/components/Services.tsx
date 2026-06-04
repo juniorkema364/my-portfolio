@@ -5,7 +5,7 @@ import cubeLeg from "../assets/cube-leg.png";
 
 interface ServiceProps {
   title: string;
-  description: string;
+  description: string; 
   icon: JSX.Element;
 }
 

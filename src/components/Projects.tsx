@@ -8,6 +8,11 @@ interface ProjectProps {
   role: string;
   impact: string;
 }
+import akili from "../assets/akili.png"
+import cubeLeg from "../assets/LG.png"
+import gbm from "../assets/gbm.png"
+import craft from "../assets/craft.png"
+
 
 const projects: ProjectProps[] = [
   {
@@ -16,7 +21,7 @@ const projects: ProjectProps[] = [
       "Plateforme digitale complète permettant la gestion et diffusion de contenu média avec une interface moderne et rapide.",
     role: "Développeur Full Stack",
     impact: "Amélioration de l’expérience utilisateur et fluidité de navigation",
-    image: "https://images.unsplash.com/photo-1521737604893-d14cc237f11d",
+    image: craft,
     link: "https://community-craft-media.onrender.com/",
   },
   {
@@ -25,7 +30,7 @@ const projects: ProjectProps[] = [
       "Site vitrine professionnel conçu pour renforcer la présence digitale d’une entreprise de services.",
     role: "Développeur Frontend",
     impact: "Augmentation de la visibilité en ligne et crédibilité de marque",
-    image: "https://images.unsplash.com/photo-1551434678-e076c223a692",
+    image: gbm,
     link: "https://gbm-services.onrender.com/",
   },
   {
@@ -34,7 +39,7 @@ const projects: ProjectProps[] = [
       "Portfolio interactif moderne mettant en avant compétences et réalisations web.",
     role: "Conception & Développement",
     impact: "Optimisation de la présentation professionnelle",
-    image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085",
+    image: cubeLeg  ,
     link: "https://portfolio-master-1-m3rq.onrender.com/",
   },
   {
@@ -43,7 +48,7 @@ const projects: ProjectProps[] = [
       "Plateforme intelligente axée sur l’IA et la gestion de données avancées.",
     role: "Développeur Full Stack",
     impact: "Automatisation et amélioration de l’analyse des données",
-    image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b",
+    image: akili,
     link: "https://akili.cc/",
   },
 ];
