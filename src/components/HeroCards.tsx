@@ -122,10 +122,15 @@ export const HeroCards = () => {
               Solutions digitales sur mesure pour entreprises et entrepreneurs.
             </CardDescription>
           </CardHeader>
-
+         <a
+      href="https://wa.me/242068100060?text=Bonjour%20👋%20je%20viens%20de%20votre%20portfolio.%20Je%20souhaite%20discuter%20d%27un%20projet%20web."
+      target="_blank"
+      rel="noreferrer noopener"
+    >
           <CardContent>
             <Button className="w-full">Me contacter</Button>
           </CardContent>
+          </a>
 
           <hr className="w-4/5 m-auto mb-4" />
 

@@ -22,7 +22,10 @@ interface PricingProps {
   description: string;
   buttonText: string;
   benefitList: string[];
+  whatsappMessage: string;
 }
+
+const phone = "242068100060";
 
 const pricingList: PricingProps[] = [
   {
@@ -30,13 +33,15 @@ const pricingList: PricingProps[] = [
     popular: 0,
     price: 100000,
     description:
-      "Idéal pour présenter votre activité, entreprise ou marque personnelle avec un site moderne et responsive.",
+      "Idéal pour présenter votre activité avec un site moderne et professionnel.",
     buttonText: "Me contacter",
+    whatsappMessage:
+      "Bonjour 👋 je souhaite un site vitrine (100 000 FCFA). Pouvez-vous m'expliquer le processus ?",
     benefitList: [
       "1 à 3 pages",
       "Design responsive",
-      "Optimisation SEO basique",
-      "Formulaire de contact",
+      "SEO basique",
+      "Formulaire contact",
       "Déploiement inclus",
     ],
   },
@@ -45,13 +50,15 @@ const pricingList: PricingProps[] = [
     popular: 1,
     price: 250000,
     description:
-      "Application web complète avec interface moderne et fonctionnalités dynamiques.",
-    buttonText: "Démarrer un projet",
+      "Application complète avec backend, base de données et dashboard.",
+    buttonText: "Démarrer",
+    whatsappMessage:
+      "Bonjour 👋 je veux une application web (250 000 FCFA). Pouvons-nous discuter du projet ?",
     benefitList: [
-      "Interface utilisateur moderne",
-      "API backend (Node.js)",
+      "Frontend moderne",
+      "Backend Node.js",
       "Base de données",
-      "Authentification",
+      "Auth",
       "Dashboard admin",
     ],
   },
@@ -60,25 +67,24 @@ const pricingList: PricingProps[] = [
     popular: 0,
     price: 500000,
     description:
-      "Solution complète et personnalisée pour startups, entreprises ou projets complexes.",
-    buttonText: "Discuter du projet",
+      "Solution complète pour projet sérieux ou startup.",
+    buttonText: "Discuter",
+    whatsappMessage:
+      "Bonjour 👋 je veux un projet sur mesure (500 000 FCFA). J'aimerais un devis détaillé.",
     benefitList: [
       "Architecture complète",
-      "Frontend + Backend",
+      "Fullstack",
       "Scalabilité",
-      "Optimisation performance",
-      "Support et maintenance",
+      "Performance",
+      "Maintenance",
     ],
   },
 ];
 
 export const Pricing = () => {
   return (
-    <section
-      id="pricing"
-      className="container py-24 sm:py-32"
-    >
-      {/* TITLE */}
+    <section id="pricing" className="container py-24 sm:py-32">
+
       <h2 className="text-3xl md:text-4xl font-bold text-center">
         Mes{" "}
         <span className="bg-gradient-to-b from-primary/60 to-primary text-transparent bg-clip-text">
@@ -87,64 +93,69 @@ export const Pricing = () => {
       </h2>
 
       <h3 className="text-xl text-center text-muted-foreground pt-4 pb-8">
-        Des solutions adaptées aux entrepreneurs, startups et entreprises
-        souhaitant digitaliser leurs activités.
+        Des solutions adaptées pour transformer vos idées en produits digitaux.
       </h3>
 
-      {/* PRICING GRID */}
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {pricingList.map((pricing: PricingProps) => (
+
+        {pricingList.map((pricing) => (
           <Card
             key={pricing.title}
             className={
               pricing.popular === PopularPlanType.YES
-                ? "drop-shadow-xl shadow-black/10 dark:shadow-white/10 border-primary"
+                ? "border-primary drop-shadow-xl shadow-black/10"
                 : ""
             }
           >
             <CardHeader>
-              <CardTitle className="flex item-center justify-between">
+              <CardTitle className="flex justify-between">
                 {pricing.title}
 
                 {pricing.popular === PopularPlanType.YES && (
-                  <Badge
-                    variant="secondary"
-                    className="text-sm text-primary"
-                  >
+                  <Badge variant="secondary" className="text-primary">
                     Recommandé
                   </Badge>
                 )}
               </CardTitle>
 
-              <div>
-                <span className="text-3xl font-bold">
-                  {pricing.price.toLocaleString()} FCFA
-                </span>
-              </div>
+              <span className="text-3xl font-bold">
+                {pricing.price.toLocaleString()} FCFA
+              </span>
 
               <CardDescription>{pricing.description}</CardDescription>
             </CardHeader>
 
+            {/* WHATSAPP BUTTON */}
             <CardContent>
-              <Button className="w-full">
-                {pricing.buttonText}
-              </Button>
+              <a
+                href={`https://wa.me/${phone}?text=${encodeURIComponent(
+                  pricing.whatsappMessage
+                )}`}
+                target="_blank"
+                rel="noreferrer noopener"
+              >
+                <Button className="w-full bg-green-500 hover:bg-green-600 text-white">
+                  {pricing.buttonText}
+                </Button>
+              </a>
             </CardContent>
 
             <hr className="w-4/5 m-auto mb-4" />
 
-            <CardFooter className="flex">
-              <div className="space-y-4">
-                {pricing.benefitList.map((benefit: string) => (
-                  <span key={benefit} className="flex">
+            <CardFooter>
+              <div className="space-y-3">
+                {pricing.benefitList.map((b) => (
+                  <div key={b} className="flex">
                     <Check className="text-green-500" />
-                    <h3 className="ml-2">{benefit}</h3>
-                  </span>
+                    <span className="ml-2">{b}</span>
+                  </div>
                 ))}
               </div>
             </CardFooter>
+
           </Card>
         ))}
+
       </div>
     </section>
   );

@@ -45,13 +45,19 @@ export const Hero = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3, duration: 0.6 }}
         >
+           <a
+            href="https://wa.me/242068100060?text=Bonjour%20👋%20je%20viens%20de%20votre%20portfolio.%20Je%20souhaite%20discuter%20d%27un%20projet%20web."
+            target="_blank"
+            rel="noreferrer noopener"
+          >
           <Button className="w-full md:w-1/3">
             Me contacter
           </Button>
+          </a>
 
           <a
             rel="noreferrer noopener"
-            href="https://github.com/"
+            href="https://github.com/juniorkema364"
             target="_blank"
             className={`w-full md:w-1/3 ${buttonVariants({
               variant: "outline",

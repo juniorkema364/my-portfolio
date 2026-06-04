@@ -3,10 +3,7 @@ import { Button } from "./ui/button";
 
 export const Cta = () => {
   return (
-    <section
-      id="cta"
-      className="bg-muted/50 py-16 my-24 sm:my-32"
-    >
+    <section id="cta" className="bg-muted/50 py-16 my-24 sm:my-32">
       <div className="container lg:grid lg:grid-cols-2 place-items-center">
 
         {/* TEXTE */}
@@ -43,16 +40,34 @@ export const Cta = () => {
           transition={{ duration: 0.8, delay: 0.2 }}
           viewport={{ once: true }}
         >
-          <Button className="w-full md:mr-4 md:w-auto">
-            Me contacter
-          </Button>
 
-          <Button
+          {/* WHATSAPP CTA */}
+          <a
+            href="https://wa.me/242068100060?text=Bonjour%20👋%20je%20viens%20de%20votre%20portfolio.%20Je%20souhaite%20discuter%20d%27un%20projet%20web."
+            target="_blank"
+            rel="noreferrer noopener"
+          >
+            <Button className="w-full md:mr-4 md:w-auto bg-green-500 hover:bg-green-600 text-white">
+              Me contacter  
+            </Button>
+          </a>
+
+          {/* SECOND BUTTON */}
+          
+          <a
+            href="#projects"
+            target="_blank"
+            rel="noreferrer noopener"
+          > 
+  <Button
             variant="outline"
             className="w-full md:w-auto"
           >
             Voir mes projets
           </Button>
+          </a>
+          
+
         </motion.div>
 
       </div>

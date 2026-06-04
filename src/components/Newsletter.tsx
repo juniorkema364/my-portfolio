@@ -1,10 +1,21 @@
+import { useState } from "react";
 import { Button } from "./ui/button";
 import { Input } from "./ui/input";
 
 export const Newsletter = () => {
-  const handleSubmit = (e: any) => {
+  const [email, setEmail] = useState("");
+
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Inscription envoyée !");
+
+    if (!email) return;
+
+    const message = `Bonjour 👋 je veux suivre vos projets. Mon email : ${email}`;
+
+    window.open(
+      `https://wa.me/242068100060?text=${encodeURIComponent(message)}`,
+      "_blank"
+    );
   };
 
   return (
@@ -23,8 +34,7 @@ export const Newsletter = () => {
 
         {/* DESCRIPTION */}
         <p className="text-xl text-muted-foreground text-center mt-4 mb-8">
-          Recevez mes projets, mes apprentissages et mes dernières créations
-          en tant que développeur web Full Stack.
+          Recevez mes projets, mes réalisations et mes nouvelles créations en tant que développeur web Full Stack.
         </p>
 
         {/* FORM */}
@@ -33,12 +43,14 @@ export const Newsletter = () => {
           onSubmit={handleSubmit}
         >
           <Input
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
             placeholder="votre.email@exemple.com"
             className="bg-muted/50 dark:bg-muted/80"
             aria-label="email"
           />
 
-          <Button>
+          <Button className="bg-green-500 hover:bg-green-600 text-white">
             S’abonner
           </Button>
         </form>

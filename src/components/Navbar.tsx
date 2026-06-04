@@ -91,7 +91,7 @@ export const Navbar = () => {
                   ))}
 
                   <a
-                    href="https://github.com/"
+                    href="https://github.com/juniorkema364"
                     target="_blank"
                     className={buttonVariants({ variant: "secondary" })}
                   >
@@ -119,7 +119,7 @@ export const Navbar = () => {
           {/* ACTIONS */}
           <div className="hidden md:flex gap-2 items-center">
             <a
-              href="https://github.com/"
+              href="https://github.com/juniorkema364"
               target="_blank"
               className={buttonVariants({ variant: "secondary" })}
             >
